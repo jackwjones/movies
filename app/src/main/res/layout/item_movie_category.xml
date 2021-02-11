@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="categoryGroup"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/padding_normal">
+
+        <TextView
+            android:id="@+id/movie_category"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/padding_xsmall"
+            android:paddingBottom="@dimen/padding_xsmall"
+            android:text="@{ categoryGroup.toUpperCase() }"
+            android:textAlignment="center"
+            android:textColor="?colorOnPrimary"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            tools:text="CATEGORY NAME" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.mgm.movies.ui.MovieDetailsFragment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.mgm.movies.ui.MovieDetailsViewModel" />
+
+        <variable
+            name="fragment"
+            type="com.mgm.movies.ui.MovieDetailsFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/text_size_normal">
+
+            <TextView
+                android:id="@+id/detail_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:text="@{ viewModel.details.title }"
+                android:textAlignment="center"
+                android:textColor="?colorOnPrimary"
+                android:textSize="@dimen/text_size_large"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="MOVIE TITLE" />
+
+            <TextView
+                android:id="@+id/detail_adult_label"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:text="@string/movie_adult"
+                android:textColor="?colorOnPrimary"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/detail_adult"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/detail_adult" />
+
+            <TextView
+                android:id="@+id/detail_adult"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:text="@{ viewModel.details.adult ? @string/yes : @string/no }"
+                android:textColor="?colorOnPrimary"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/detail_adult_label"
+                app:layout_constraintTop_toBottomOf="@id/detail_title"
+                tools:text="YES" />
+
+            <TextView
+                android:id="@+id/detail_budget_label"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:text="@string/movie_budget"
+                android:textColor="?colorOnPrimary"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/detail_budget"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/detail_budget" />
+
+            <TextView
+                android:id="@+id/detail_budget"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:text="@{ viewModel.details.stringBudget }"
+                android:textColor="?colorOnPrimary"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/detail_budget_label"
+                app:layout_constraintTop_toBottomOf="@id/detail_adult_label"
+                tools:text="BUDGET" />
+
+            <TextView
+                android:id="@+id/detail_overview_label"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:text="@string/movie_overview"
+                android:textColor="?colorOnPrimary"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/detail_overview"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/detail_overview" />
+
+            <TextView
+                android:id="@+id/detail_overview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:text="@{ viewModel.details.overview }"
+                android:textColor="?colorOnPrimary"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/detail_overview_label"
+                app:layout_constraintTop_toBottomOf="@id/detail_budget_label"
+                tools:text="OVERVIEW" />
+
+            <TextView
+                android:id="@+id/detail_popularity_label"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:text="@string/movie_popularity"
+                android:textColor="?colorOnPrimary"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/detail_popularity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/detail_popularity" />
+
+            <TextView
+                android:id="@+id/detail_popularity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:text="@{ viewModel.details.stringPopularity }"
+                android:textColor="?colorOnPrimary"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/detail_popularity_label"
+                app:layout_constraintTop_toBottomOf="@id/detail_overview_label"
+                tools:text="POPULARITY" />
+
+            <TextView
+                android:id="@+id/detail_revenue_label"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:text="@string/movie_revenue"
+                android:textColor="?colorOnPrimary"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/detail_revenue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/detail_revenue" />
+
+            <TextView
+                android:id="@+id/detail_revenue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:text="@{ viewModel.details.stringRevenue }"
+                android:textColor="?colorOnPrimary"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/detail_revenue_label"
+                app:layout_constraintTop_toBottomOf="@id/detail_popularity_label"
+                tools:text="REVENUE" />
+
+            <TextView
+                android:id="@+id/detail_runtime_label"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:text="@string/movie_runtime"
+                android:textColor="?colorOnPrimary"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/detail_runtime"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/detail_runtime" />
+
+            <TextView
+                android:id="@+id/detail_runtime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:text="@{ viewModel.details.stringRuntime }"
+                android:textColor="?colorOnPrimary"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/detail_runtime_label"
+                app:layout_constraintTop_toBottomOf="@id/detail_revenue_label"
+                tools:text="RUNTIME" />
+
+            <TextView
+                android:id="@+id/detail_status_label"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:text="@string/movie_status"
+                android:textColor="?colorOnPrimary"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/detail_status"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/detail_status" />
+
+            <TextView
+                android:id="@+id/detail_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:text="@{ viewModel.details.status }"
+                android:textColor="?colorOnPrimary"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/detail_status_label"
+                app:layout_constraintTop_toBottomOf="@id/detail_runtime_label"
+                tools:text="STATUS" />
+
+            <TextView
+                android:id="@+id/detail_tagline_label"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:text="@string/movie_tagline"
+                android:textColor="?colorOnPrimary"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/detail_tagline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/detail_tagline" />
+
+            <TextView
+                android:id="@+id/detail_tagline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:text="@{ viewModel.details.tagline }"
+                android:textColor="?colorOnPrimary"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/detail_tagline_label"
+                app:layout_constraintTop_toBottomOf="@id/detail_status_label"
+                tools:text="STATUS" />
+
+            <TextView
+                android:id="@+id/detail_vote_average_label"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:text="@string/movie_average"
+                android:textColor="?colorOnPrimary"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/detail_vote_average"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/detail_vote_average" />
+
+            <TextView
+                android:id="@+id/detail_vote_average"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:text="@{ viewModel.details.stringVoteAverage }"
+                android:textColor="?colorOnPrimary"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/detail_vote_average_label"
+                app:layout_constraintTop_toBottomOf="@id/detail_tagline_label"
+                tools:text="VOTE AVERAGE" />
+
+            <TextView
+                android:id="@+id/detail_vote_count_label"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:text="@string/movie_vote_count"
+                android:textColor="?colorOnPrimary"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/detail_vote_count"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/detail_vote_count" />
+
+            <TextView
+                android:id="@+id/detail_vote_count"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:text="@{ viewModel.details.stringVoteCount }"
+                android:textColor="?colorOnPrimary"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/detail_vote_count_label"
+                app:layout_constraintTop_toBottomOf="@id/detail_vote_average_label"
+                tools:text="VOTE COUNT" />
+
+            <Button
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_xxxlarge"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_xxxlarge"
+                android:backgroundTint="@color/white"
+                android:onClick="@{ fragment.showReviews }"
+                android:text="@string/reviews"
+                android:textSize="@dimen/text_size_large"
+                app:cornerRadius="@dimen/margin_large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detail_vote_count" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

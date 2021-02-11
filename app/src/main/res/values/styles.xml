@@ -1,0 +1,6 @@
+<resources>
+
+    <style name="MovieCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">@dimen/margin_normal</item>
+    </style>
+</resources>
